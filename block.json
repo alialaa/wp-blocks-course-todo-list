@@ -1,14 +1,14 @@
 {
 	"apiVersion": 2,
-	"name": "create-block/boilerplate",
-	"title": "Boilerplate",
+	"name": "blocks-course/todo-list",
+	"title": "To Do List",
 	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"icon": "editor-ul",
+	"description": "Display and edit todos in the data store.",
 	"supports": {
 		"html": false
 	},
-	"textdomain": "boilerplate",
+	"textdomain": "todo-list",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"
