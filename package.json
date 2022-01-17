@@ -28,6 +28,8 @@
 	"dependencies": {
 		"@wordpress/block-editor": "^8.0.11",
 		"@wordpress/blocks": "^11.1.4",
+		"@wordpress/components": "^19.2.0",
+		"@wordpress/data": "^6.1.5",
 		"@wordpress/i18n": "^4.2.4"
 	},
 	"devDependencies": {

@@ -1,9 +1,21 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.wp-block-blocks-course-todo-list {
 
-.wp-block-create-block-boilerplate {
-	border: 1px dotted #f03;
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-bottom: 15px;
+
+			&.todo-completed {
+				opacity: 0.5;
+				text-decoration: line-through;
+			}
+
+			label {
+				font-size: 16px;
+			}
+		}
+	}
 }
