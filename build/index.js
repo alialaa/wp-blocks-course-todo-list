@@ -29,19 +29,38 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Edit() {
+  const [newTodo, setNewTodo] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   const todos = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.useSelect)(select => {
     const todosStore = select('blocks-course/todos');
     return todosStore && todosStore.getTodos();
   }, []);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), !todos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Please make sure your plugin is activated', 'todo-list')), todos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null, todos.map(todo => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+  const actions = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.useDispatch)('blocks-course/todos');
+  const addTodo = actions && actions.addTodo;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), !todos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Please make sure your plugin is activated', 'todo-list')), todos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null, todos.map(todo => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     key: todo.id,
     className: todo.completed && 'todo-completed'
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CheckboxControl, {
     label: todo.title,
     checked: todo.completed,
     onChange: v => console.log(v)
-  })))));
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
+    onSubmit: e => {
+      e.preventDefault();
+      if (addTodo) addTodo({
+        title: newTodo,
+        completed: false
+      });
+    },
+    className: "addtodo-form"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    value: newTodo,
+    onChange: v => setNewTodo(v)
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    type: "submit",
+    isPrimary: true
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add Todo', 'todo-list')))));
 }
 
 /***/ }),
