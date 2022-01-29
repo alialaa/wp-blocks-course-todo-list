@@ -21,7 +21,7 @@ export default function Edit() {
 				<p>
 					{__(
 						'Please make sure your plugin is activated',
-						'todo-list'
+						'blocks-course-todo-list'
 					)}
 				</p>
 			)}
@@ -63,7 +63,7 @@ export default function Edit() {
 							onChange={(v) => setNewTodo(v)}
 						/>
 						<Button disabled={addingTodo} type="submit" isPrimary>
-							{__('Add Todo', 'todo-list')}
+							{__('Add Todo', 'blocks-course-todo-list')}
 						</Button>
 					</form>
 				</>
